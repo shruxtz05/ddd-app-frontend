@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import "./globals.css";
-import "./dist/output.css";
+import "../dist/output.css";
 import { BrowserRouter as Router } from 'react-router-dom';
 import AppRoutes from './AppRoutes';
 import Auth0ProviderWithNavigate from './auth/Auth0ProviderWithNavigate';
