@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
 import MobileNav from "./MobileNav";
-import UsernameMenu from "./UsernameMenu";
+
 import MainNav from "./MainNav"; // ✅ Import MainNav (Full-Screen Login Button)
-import { useAuth0 } from "@auth0/auth0-react";
 
 const Header = () => {
-  const { isAuthenticated } = useAuth0();
 
   return (
     <div className="border-b-2 border-b-orange-500 py-6 relative">
