@@ -4,20 +4,12 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ],
-    "compilerOptions": {
-      "baseUrl": "./src",
-      "paths": {
-        "@/*": ["*"]
-      }
-    }
-
-    {
-      "compilerOptions": {
-        "noUnusedLocals": false,
-        "noUnusedParameters": false
-      }
-    }
-    
-  
-  
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
+  }
 }
