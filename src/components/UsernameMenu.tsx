@@ -1,63 +1,49 @@
-import { useAuth0 } from "@auth0/auth0-react";
 import { CircleUserRound } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
+import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
+import { Separator } from "./ui/separator";
 import { Button } from "./ui/button";
-import { useState, useEffect } from "react";
 
 const UsernameMenu = () => {
-  const { isAuthenticated, user, logout } = useAuth0();
-  const [isOpen, setIsOpen] = useState(false);
-
-  if (!isAuthenticated) return null; // Hide if not logged in
-
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const closeDropdown = (e: MouseEvent) => {
-      if (!document.getElementById("dropdown-menu")?.contains(e.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener("click", closeDropdown);
-    return () => document.removeEventListener("click", closeDropdown);
-  }, []);
+  const { user, logout } = useAuth0();
 
   return (
-    <div className="relative">
-      {/* User Icon & Email */}
-      <button
-        onClick={(e) => {
-          e.stopPropagation(); // Prevents closing immediately
-          setIsOpen(!isOpen);
-        }}
-        className="flex items-center gap-2 font-bold text-orange-500"
-      >
+    <DropdownMenu>
+      <DropdownMenuTrigger className="flex items-center px-3 font-bold hover:text-orange-500 gap-2">
         <CircleUserRound className="text-orange-500" />
         {user?.email}
-      </button>
-
-      {/* Dropdown Menu */}
-      {isOpen && (
-        <div
-          id="dropdown-menu"
-          onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
-          className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg border z-50"
-        >
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuItem>
           <Link
-            to="/user-profile"
-            className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-            onClick={() => setIsOpen(false)} // Close on navigation
+            to="/manage-restaurant"
+            className="font-bold hover:text-orange-500"
           >
+            Manage Restaurant
+          </Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem>
+          <Link to="/user-profile" className="font-bold hover:text-orange-500">
             User Profile
           </Link>
+        </DropdownMenuItem>
+        <Separator />
+        <DropdownMenuItem>
           <Button
-            onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}
-            className="w-full text-left px-4 py-2 text-red-500 hover:bg-gray-100"
+            onClick={() => logout()}
+            className="flex flex-1 font-bold bg-orange-500"
           >
             Log Out
           </Button>
-        </div>
-      )}
-    </div>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
 
