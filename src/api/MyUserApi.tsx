@@ -20,7 +20,7 @@ export const useGetMyUser = () => {
     });
 
     if (!response.ok) {
-      throw new Error("Failed to fetch user");
+      throw new Error("Failed to fetch user" + response.json());
     }
 
     return response.json();
@@ -126,3 +126,4 @@ export const useUpdateMyUser = () => {
 
   return { updateUser, isLoading };
 };
+

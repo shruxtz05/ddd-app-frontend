@@ -28,7 +28,7 @@ const MobileNav = () => {
               </div>
             ) : (
               <span className="text-orange-600">
-                Welcome to <span className="text-orange-500 font-extrabold">DailyDabbaDelivery</span> 🚀
+                Welcome to <span className="text-orange-500 font-extrabold">डaily डब्बा डelivery</span> 🚀
               </span>
             )}
           </SheetTitle>

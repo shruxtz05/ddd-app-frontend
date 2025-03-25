@@ -19,25 +19,26 @@ const UsernameMenu = () => {
         <CircleUserRound className="text-orange-500" />
         {user?.email}
       </DropdownMenuTrigger>
-      <DropdownMenuContent>
-        <DropdownMenuItem>
-          <Link
-            to="/manage-restaurant"
-            className="font-bold hover:text-orange-500"
-          >
+
+      {/* Dropdown Content */}
+      <DropdownMenuContent className="bg-white shadow-lg border rounded-md w-48">
+        <DropdownMenuItem className="px-4 py-2 hover:bg-gray-100">
+          <Link to="/manage-restaurant" className="font-bold text-gray-700">
             Manage Restaurant
           </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem>
-          <Link to="/user-profile" className="font-bold hover:text-orange-500">
+        <DropdownMenuItem className="px-4 py-2 hover:bg-gray-100">
+          <Link to="/user-profile" className="font-bold text-gray-700">
             User Profile
           </Link>
         </DropdownMenuItem>
+
         <Separator />
-        <DropdownMenuItem>
+
+        <DropdownMenuItem className="px-4 py-2">
           <Button
             onClick={() => logout()}
-            className="flex flex-1 font-bold bg-orange-500"
+            className="w-full bg-orange-500 text-white font-bold py-2 rounded-md hover:bg-orange-600"
           >
             Log Out
           </Button>
@@ -47,4 +48,4 @@ const UsernameMenu = () => {
   );
 };
 
-export default UsernameMenu;
+export default UsernameMenu; 
