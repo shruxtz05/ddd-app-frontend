@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import hero from "../assets/hero.png";
-import Header from "./Header";
 
 const Hero = () => {
     return (

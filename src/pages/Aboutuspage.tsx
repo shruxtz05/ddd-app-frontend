@@ -2,8 +2,6 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa";
 import tiffinImage1 from "../assets/tiffin-1796180_1280 (2).jpg";
-import MobileNavLinks from "@/components/MobileNavLinks";
-import MainNav from "@/components/MainNav";
 import Header from "@/components/Header";
 
 const AboutUs = () => {
