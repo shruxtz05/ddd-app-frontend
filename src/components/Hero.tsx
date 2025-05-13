@@ -12,19 +12,20 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <h1 className="text-4xl md:text-5xl font-bold text-orange-600 leading-tight">
-                    India’s Best <br /> Online Tiffin Service
+                <h1 className="text-3xl md:text-5xl font-bold text-orange-600 leading-tight">
+                    Get Your meal!!! <br />
                 </h1>
                 <p className="text-lg text-gray-700 mt-4">
                     Enjoy homemade, nutritious, and delicious meals delivered straight to your doorstep. <br />
-                    "Ghar ka khana, just the way you want!"
+                    "Ghar ka khana, just the way you want!"<br></br>
+                    Click here to know DailyDabbaDelivery
                 </p>
                 <motion.button 
                     className="mt-6 bg-orange-500 text-white text-lg font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-orange-600"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                 <a href="http://localhost:5173/about">About Page</a> 
+                 <a href="http://localhost:5173/about">Explore more</a> 
                    
                 </motion.button>
             </motion.div>
