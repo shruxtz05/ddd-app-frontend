@@ -41,7 +41,8 @@ export type Order = {
   cartItems: {
     menuItemId: string;
     name: string;
-    quantity: string;
+    quantity: number;
+    price :number;
   }[];
   deliveryDetails: {
     name: string;
